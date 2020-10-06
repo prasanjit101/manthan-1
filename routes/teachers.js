@@ -1,7 +1,10 @@
 const router = require('express').Router();
 let Teacher = require('../models/teacher.model');
+const Classroom = require('../models/classroom.model');
+const { json } = require('express');
 
 router.route('/').get((req, res) => {
+
   Teacher.find()
     .then(teacher => res.json(teacher))
     .catch(err => res.status(400).json('Error: ' + err));
@@ -9,6 +12,7 @@ router.route('/').get((req, res) => {
 
 
 router.route('/add').post((req, res) => {
+
     const username = req.body.username;
     const email = req.body.email;
     const classrooms = req.body.classrooms;
@@ -26,15 +30,25 @@ router.route('/add').post((req, res) => {
 
 router.route('/delete').post((req,res) => {
 
-    const email = {
+    const query = {
         "email":req.body.email
-    }
+    };
 
-    console.log(email);
-
-    Teacher.deleteOne(email)
+    Teacher.deleteOne(query)
     .then(() => res.json('Teacher delete!'))
     .catch(err => res.status(400).json('Error: ' + err));
+    });
+    
+router.route('/user').get((req,res) => {
+    const email = req.body.email;
+
+    Teacher.findOne({"email":email})
+    .then(user => {
+        res.json(user)
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
 });
+
+
 
 module.exports = router;

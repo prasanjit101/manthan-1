@@ -44,5 +44,11 @@ router.route('/delete').post((req,res) => {
     .catch(err => res.status(400).json('Error: ' + err));
     });
 
+router.route('/:id').get((req, res) => {
+        Test.findById(req.params.id)
+          .then(test => res.json(test))
+          .catch(err => res.status(400).json('Error: ' + err));
+});
+         
 
-module.exports = router; 
+module.exports = router;

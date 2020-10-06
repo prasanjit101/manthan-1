@@ -23,7 +23,7 @@ router.route('/add').post((req, res) => {
     newClassroom.save()
     .then(() => res.json('Classroom added!'))
     .catch(err => res.status(400).json('Error: ' + err));
-  });
+});
 
 router.route('/delete').post((req,res) => {
 
@@ -33,10 +33,15 @@ router.route('/delete').post((req,res) => {
     };
 
     Classroom.deleteOne(query)
-    .then(() => res.json('Teacher delete!'))
+    .then(() => res.json('Classroom delete!'))
     .catch(err => res.status(400).json('Error: ' + err));
-    });
+});
 
-
+router.route('/:id').get((req, res) => {
+    Classroom.findById(req.params.id)
+      .then(classroom => res.json(classroom))
+      .catch(err => res.status(400).json('Error: ' + err));
+});
+        
 
 module.exports = router;

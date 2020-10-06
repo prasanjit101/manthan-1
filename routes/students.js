@@ -39,4 +39,17 @@ router.route('/delete').post((req,res) => {
 
 });
 
+
+router.route('/user').get((req,res) => {
+    const email = req.body.email;
+
+    Student.findOne({"email":email})
+    .then(user => {
+        res.json(user);
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
+
+});
+
+
 module.exports = router;
