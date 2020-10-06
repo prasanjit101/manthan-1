@@ -24,4 +24,17 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
   });
 
+router.route('/delete').post((req,res) => {
+
+    const email = {
+        "email":req.body.email
+    }
+
+    console.log(email);
+
+    Teacher.deleteOne(email)
+    .then(() => res.json('Teacher delete!'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;
