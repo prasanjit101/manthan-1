@@ -6,7 +6,7 @@ const studentSchema = new Schema({
   username: { type: String, required: true },
   email: { type: String, required: true },
   rollno: { type: String, required: true },
-  classroom: { type: Array, required: true },
+  classroom: { type: Array, required: true }
 });
 
 const Student = mongoose.model('Student', studentSchema);

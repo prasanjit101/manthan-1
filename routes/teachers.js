@@ -7,4 +7,21 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+
+router.route('/add').post((req, res) => {
+    const username = req.body.username;
+    const email = req.body.email;
+    const classrooms = req.body.classrooms;
+  
+    const newTeacher = new Teacher({
+      username,
+      email,
+      classrooms
+    });
+  
+    newTeacher.save()
+    .then(() => res.json('Teacher added!'))
+    .catch(err => res.status(400).json('Error: ' + err));
+  });
+
 module.exports = router;
