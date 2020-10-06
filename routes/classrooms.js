@@ -25,4 +25,18 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
   });
 
+router.route('/delete').post((req,res) => {
+
+    const query = {
+        "code":req.body.code,
+        "instructor":req.body.instructor
+    };
+
+    Classroom.deleteOne(query)
+    .then(() => res.json('Teacher delete!'))
+    .catch(err => res.status(400).json('Error: ' + err));
+    });
+
+
+
 module.exports = router;
