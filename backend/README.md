@@ -15,8 +15,8 @@ Follow the steps for working on this repository strictly :
 1. Fork the repository to your Github account
 2. Copy the link (ends with a .git) of your forked repository
 3. In a folder of your choice in your local machine, run `git clone thelinkyoujustcopied.git`
-4. `cd manthan-backend`
-5. `git remote add upstream https://github.com/aavishkarmishra/manthan-backend.git` 
+4. `cd manthan`
+5. `git remote add upstream https://github.com/aavishkarmishra/manthan.git` 
 6. When ever you want to push your change, do `git add .` and `git commit -m "did a change"` and then do `git pull upstream master`. Then finally, do `git push origin master`.
 7. After pushing, go to your forked repository on Github and create a pull request.
 
@@ -24,7 +24,7 @@ Follow the steps for working on this repository strictly :
 
 ### Steps to run the application
 
-1. `cd manthan-backend`
+1. `cd manthan`
    
 2. `npm install` (only for the first time) then `nodemon server` this will run application on `http://localhost:5000`
 
