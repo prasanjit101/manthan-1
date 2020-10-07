@@ -33,136 +33,129 @@ Follow the steps for working on this repository strictly :
 
 ### Testing the API
 
-1. Locally, eg: http://localhost:9999/run-model/add_members
-2. With LIVE Heroku Server, eg: https://mcctezu-backend.herokuapp.com/run-model/add_members
+1. Locally, eg: http://localhost:9999/run-model/add_students
+2. With LIVE Heroku Server, eg: https://manthan-backend.herokuapp.com/students/
 3. Test the API with POSTMAN. 
 
-Example for FETCH NOTIFICATIONS : 
+### Example to FETCH STUDENTS : 
 
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/get_members` to get all the members.
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/get_members/<_id>` to get a member for an ID.
+* Set the URL TO `https://manthan-backend.herokuapp.com/students` to get all the students.
+* Set the URL TO `https://manthan-backend.herokuapp.com/students/user` to get a student with respect to an email.
 
-
-Example Input for add_members and edit members (ALL FIELDS MUST BE SENT):  
-
-```json
-    { 
-        "_id": 1, 
-        "name": "Adittya Dey", 
-        "dept": "CSE", 
-        "linkedin": "somelink", 
-        "phone": "somenumber", 
-        "email": "someemail", 
-        "image": "somelink",
-        "interest": "Full Stack"
-    }
-```
-
-Example Input for delete members (Send ID):  
-
-```json
-    { 
-        "_id": 1
-    }
-```
-***
-
-Example for GET EVENTS :  
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/get_events`
-OR `https://mcctezu-backend.herokuapp.com/run-model/get_events/` to get all the records.
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/get_events/<event_name>` to get record for specified event only. 
-
-Example input for ADD EVENTS :
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/add_events`
-INPUT:
-```json
-    {
-        "evt_name":"Codeathon",
-        "evt_org":"MCC_TEZU",
-        "evt_date":"04/09/2020",
-        "evt_time":"3:00pm",
-        "evt_venue":"Dean's Building",
-        "evt_image":"none"
-    }
-```
-Example input for UPDATE EVENTS :
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/update_events`
-INPUT:
-```json
-    {
-        "field": {
-            "evt_name": "Code Hack"
-        },
-        "field_update": {
-            "evt_org": "MCC_TEZU"
+    Example Input :  
+    ```json
+        { 
+        "email": "aavishkar@gmail.com", 
         }
-    }
-```
-In `field` attribute give the column name to identify the record to update. In `field_update` specify the column to be updated and give the new value to it.
+    ```
+### Example to ADD STUDENT
+* Set the URL TO `https://manthan-backend.herokuapp.com/students/add` to add a student.
 
-Example input for DELETE EVENTS :
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/delete_events`
-INPUT:
-```json
-    {
-    "evt_name":"Codathon"
-    }
-```
-Specify the column to identify and delete the record.
+    Example Input:
+    ```json
+        {
+            "username":"Aavishkar Mishra",
+            "email":"aavishkarmishra@gmail.com",
+            "rollno":"CSB19055",
+            "classrooms":[]
+        }
+    ```
 
+*** 
+### Example to FETCH TEACHERS : 
+
+* Set the URL TO `https://manthan-backend.herokuapp.com/teachers` to get all the teachers.
+* Set the URL TO `https://manthan-backend.herokuapp.com/teachers/user` to get a teacher with respect to an email.
+
+    Example Input :  
+    ```json
+    { 
+        "email": "aavishkar@gmail.com", 
+    }
+    ```
+### Example to ADD TEACHER
+* Set the URL TO `https://manthan-backend.herokuapp.com/teachers/add` to add a teacher.
+
+    Example Input:
+    ```json
+        {
+            "username":"Aavishkar Mishra",
+            "email":"aavishkarmishra@gmail.com",
+            "classrooms":[]
+        }
+    ```
+
+*** 
+### Example to FETCH CLASSROOMS : 
+
+* Set the URL TO `https://manthan-backend.herokuapp.com/classrooms` to get all the classrooms.
+* Set the URL TO `https://manthan-backend.herokuapp.com/classrooms/:id` to get a classroom with respect to id.
+
+### Example to ADD CLASSROOM
+* Set the URL TO `https://manthan-backend.herokuapp.com/classrooms/add` to add a classroom.
+
+    Example Input:
+    ```json
+        {
+            "name":"Signal Systems",
+            "code":"EC205",
+            "instructor":"Ananya",
+            "tests":[]
+        }
+    ```
+
+
+*** 
+### Example to FETCH TESTS : 
+
+* Set the URL TO `https://manthan-backend.herokuapp.com/tests` to get all the tests.
+* Set the URL TO `https://manthan-backend.herokuapp.com/tests/:id` to get a test with respect to id.
 ***
 
-Example input for ADD NOTIFICATIONS :
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/notifications/add`
-INPUT:
-```json
-    {
-        "_id":3,
-        "date":"27/04/2020",
-        "title":"Events",
-        "notification":"sample text"
-    }
-```
+### Example to ADD TEST
+* Set the URL TO `https://manthan-backend.herokuapp.com/tests/add` to add a test.
 
-Example for FETCH NOTIFICATIONS : 
+    Example Input:
+    ```json
+        {
+            "name": "Test01",
+            "date": "2010-10-09T18:30:00.000+00:00",
+            "duration": [
+                1,
+                0
+            ],
+            "marks": 20,
+            "questions": [
+                {
+                    "question":"sample question",
+                    "option1":"sample option",
+                    "option2":"sample option",
+                    "option3":"sample option",
+                    "option4":"sample option",
+                    "answer":1,
+                    "marks":2,
+                    "type":"A",
+                },
+            ],
+            "rules": [
+                {
+                    "type":"A",
+                    "noofquestion":5
+                },
+            ],
+            "scores": [
+                {
+                    "rollno":"CSB19055",
+                    "marks":15
+                },
+            ]
+        }
+    ```
 
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/notifications/fetch`
-OR `https://mcctezu-backend.herokuapp.com/run-model/notifications/fetch/` to get all the records.
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/notifications/fetch/<_id>` to get record for specified notification by id.
 
-
-Example input for UPDATE NOTIFICATIONS :
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/notifications/update` to Update Single Record 
-
-INPUT:
-```json
-    {
-        
-        "_id": 3,
-       "title": "NEW TITLE"
-        
-    }
-```
-
-In `field` attribute give the column name to identify the record to update. In `update` specify the column to be updated and give the new value to it.
-
-Example input for DELETE NOTIFICATIONS :
-* Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/notifications/delete_one` to Delete Single Record OR
-Set the URL TO `https://mcctezu-backend.herokuapp.com/run-model/notifications/delete_many` to Delete More Than One Records
-INPUT:
-```json
-    {
-
-        "_id": 3
-    
-    }
-```
-
-<hr>
 
 ## Author
 
-#### [Aavishkar Mishra
-](https://github.com/adiXcodr)
+## [Aavishkar Mishra](https://github.com/aavishkarmishra)
 [<img src="https://image.flaticon.com/icons/svg/185/185964.svg" width="35" padding="10">](https://www.linkedin.com/in/aavishkarmishra/)
 [<img src="https://image.flaticon.com/icons/svg/185/185985.svg" width="35" padding="10">](https://www.instagram.com/aavishkar_mishra/)
