@@ -92,7 +92,7 @@ Follow the steps for working on this repository strictly :
 * Set the URL TO `https://manthan-backend.herokuapp.com/classrooms/:id` to get a classroom with respect to id.
 
 ### Example to ADD CLASSROOM
-* Set the URL TO `https://manthan-backend.herokuapp.com/classrooms/add` to add a classroom.
+* Set the URL TO `https://manthan-backend.herokuapp.com/classrooms/add` to add a classroom and get _id of classroom .
 
     Example Input:
     ```json
@@ -113,7 +113,7 @@ Follow the steps for working on this repository strictly :
 ***
 
 ### Example to ADD TEST
-* Set the URL TO `https://manthan-backend.herokuapp.com/tests/add` to add a test.
+* Set the URL TO `https://manthan-backend.herokuapp.com/tests/add` to add a test and get _id of test .
 
     Example Input:
     ```json
@@ -134,20 +134,20 @@ Follow the steps for working on this repository strictly :
                     "option4":"sample option",
                     "answer":1,
                     "marks":2,
-                    "type":"A",
-                },
+                    "type":"A"
+                }
             ],
             "rules": [
                 {
                     "type":"A",
                     "noofquestion":5
-                },
+                }
             ],
             "scores": [
                 {
                     "rollno":"CSB19055",
                     "marks":15
-                },
+                }
             ]
         }
     ```

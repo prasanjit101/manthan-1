@@ -21,7 +21,7 @@ router.route('/add').post((req, res) => {
     });
   
     newClassroom.save()
-    .then(() => res.json('Classroom added!'))
+    .then(classroom => res.json(classroom._id))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 

@@ -29,7 +29,7 @@ router.route('/add').post((req, res) => {
     });
   
     newTest.save()
-    .then(() => res.json('Test added!'))
+    .then(test => res.json(test._id))
     .catch(err => res.status(400).json('Error: ' + err));
   });
 
