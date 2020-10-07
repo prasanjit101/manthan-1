@@ -33,7 +33,7 @@ Follow the steps for working on this repository strictly :
 
 ### Testing the API
 
-1. Locally, eg: http://localhost:9999/run-model/add_students
+1. Locally, eg: http://localhost:5000/students/
 2. With LIVE Heroku Server, eg: https://manthan-backend.herokuapp.com/students/
 3. Test the API with POSTMAN. 
 
@@ -110,7 +110,6 @@ Follow the steps for working on this repository strictly :
 
 * Set the URL TO `https://manthan-backend.herokuapp.com/tests` to get all the tests.
 * Set the URL TO `https://manthan-backend.herokuapp.com/tests/:id` to get a test with respect to id.
-***
 
 ### Example to ADD TEST
 * Set the URL TO `https://manthan-backend.herokuapp.com/tests/add` to add a test and get _id of test .
@@ -151,9 +150,7 @@ Follow the steps for working on this repository strictly :
             ]
         }
     ```
-
-
-
+***
 ## Author
 
 ## [Aavishkar Mishra](https://github.com/aavishkarmishra)
